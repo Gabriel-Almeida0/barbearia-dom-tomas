@@ -1,0 +1,76 @@
+import Image from 'next/image'
+import { Container } from '@/components/ui/Container'
+import { SectionHeading } from '@/components/ui/SectionHeading'
+import { Reveal } from '@/components/ui/Reveal'
+import { IconeInstagram } from '@/components/ui/icons'
+import { linkExterno } from '@/lib/whatsapp'
+import { galeria } from '@/content/galeria'
+import { secoes } from '@/content/secoes'
+import { imagens, sizes } from '@/content/imagens'
+import { site } from '@/content/site'
+
+/**
+ * Galeria (T038): grade 2 → 3 colunas de tiles 3:4 com zoom no hover e legenda sobre gradiente.
+ * A caixa tem aspect-ratio fixo antes da imagem carregar (sem CLS). Zoom só sem movimento reduzido.
+ */
+export default function Galeria() {
+  const head = secoes.galeriaHead
+
+  return (
+    <section id="galeria" aria-labelledby="galeria-titulo" className="secao bg-bege">
+      <Container>
+        <Reveal>
+          <SectionHeading id="galeria-titulo" tom="claro" eyebrow={head.eyebrow} titulo={head.titulo} destaque={head.destaque} />
+        </Reveal>
+
+        <ul className="grid grid-cols-2 gap-[.75rem] sm:gap-[1.1rem] lg:grid-cols-3" role="list">
+          {galeria.map((item, i) => {
+            const img = imagens[item.imagem]
+            return (
+              <Reveal as="li" key={item.imagem} atraso={(i % 3) as 0 | 1 | 2}>
+                <figure
+                  className="group relative m-0 overflow-hidden rounded-card bg-noite-2 shadow-card"
+                  style={{ aspectRatio: '3 / 4' }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes={sizes.galeria}
+                    loading="lazy"
+                    className="object-cover motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-marca motion-safe:group-hover:scale-[1.06] motion-safe:group-focus-within:scale-[1.06]"
+                  />
+                  <figcaption
+                    className={
+                      'absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent ' +
+                      'px-[clamp(.8rem,2.4vw,1.15rem)] pb-[clamp(.75rem,2.2vw,1.05rem)] pt-16 ' +
+                      'font-head text-[clamp(.78rem,2.4vw,.95rem)] font-medium uppercase leading-tight tracking-[.08em] text-mostarda-claro'
+                    }
+                  >
+                    {item.legenda}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            )
+          })}
+        </ul>
+
+        <Reveal className="mt-[clamp(1.8rem,4vw,2.6rem)] text-center">
+          <p className="texto text-muted">
+            <IconeInstagram className="mr-2 inline-block size-[1.15em] -translate-y-px align-middle text-mostarda-texto" />
+            {secoes.galeria.rodapeAntes}{' '}
+            <a
+              href={site.instagram.url}
+              {...linkExterno}
+              className="rounded-sm font-semibold text-mostarda-texto underline decoration-mostarda decoration-2 underline-offset-4 transition-colors duration-300 hover:text-grafite"
+            >
+              {site.instagram.usuario}
+              <span className="sr-only"> (abre em nova aba)</span>
+            </a>{' '}
+            {secoes.galeria.rodapeDepois}
+          </p>
+        </Reveal>
+      </Container>
+    </section>
+  )
+}

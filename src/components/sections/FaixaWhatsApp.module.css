@@ -1,0 +1,304 @@
+/*
+ * B6 — Faixa "Agende pelo WhatsApp" (research R8).
+ * Tokens via var(--color-*) (globals.css). Nada de hex aqui além das sombras do contrato.
+ */
+
+/* ---------- Seção ---------- */
+
+.faixa {
+  /* clip (não hidden): corta o vazamento horizontal sem criar contêiner de rolagem,
+     então os celulares continuam vazando para cima/baixo. */
+  overflow-x: clip;
+  overflow-y: visible;
+  margin: 32px 0 130px; /* mobile: celulares vazam só para baixo */
+  padding: 64px 0;
+}
+
+@media (min-width: 61.25rem) {
+  .faixa {
+    /* bege acima (onde o celular de trás invade) e abaixo (onde o da frente vaza) */
+    margin: 72px 0 120px;
+    padding: 88px 0;
+  }
+}
+
+.texto {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 460px;
+}
+
+/* ---------- Coluna dos celulares ---------- */
+
+.coluna {
+  margin: 48px 0 -110px; /* mobile: abaixo do texto, vaza só para baixo */
+}
+
+@media (min-width: 61.25rem) {
+  .coluna {
+    /* altura "zero" no grid: o texto define a faixa e os celulares vazam acima e abaixo */
+    align-self: stretch;
+    position: relative;
+    margin: 0;
+  }
+}
+
+/* Palco dos dois celulares. --fone = largura de cada aparelho. */
+.palco {
+  --fone: min(150px, 36vw);
+  position: relative;
+  width: calc(var(--fone) * 2.05);
+  height: calc(var(--fone) * 2.3);
+  margin-inline: auto;
+}
+
+@media (min-width: 35rem) {
+  .palco {
+    --fone: 190px;
+  }
+}
+
+@media (min-width: 61.25rem) {
+  .palco {
+    --fone: clamp(210px, 17.5vw, 250px);
+    position: absolute;
+    left: 50%;
+    /* centro vertical do palco um pouco abaixo do centro da faixa:
+       o de trás passa do topo (~90px) e o da frente da base (~80px) */
+    top: calc(50% - var(--fone) * 1.2);
+    translate: -54% 0;
+    height: calc(var(--fone) * 2.6);
+  }
+}
+
+.slotFrente,
+.slotTras {
+  position: absolute;
+  width: var(--fone);
+}
+
+.slotFrente {
+  left: calc(var(--fone) * 0.08);
+  top: calc(var(--fone) * 0.3);
+  z-index: 10;
+  transform: rotate(-14deg);
+}
+
+.slotTras {
+  left: calc(var(--fone) * 0.52);
+  top: calc(var(--fone) * 0.1);
+  transform: rotate(18deg) translate(40%, -8%);
+}
+
+@media (min-width: 61.25rem) {
+  .slotFrente {
+    left: 0;
+    top: calc(var(--fone) * 0.5);
+  }
+  .slotTras {
+    top: calc(var(--fone) * -0.24);
+  }
+}
+
+/* ---------- Aparelho ---------- */
+
+.fone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  border-radius: calc(var(--fone) * 0.157); /* 36px em 230px */
+  border: calc(var(--fone) * 0.0435) solid var(--color-loja); /* 10px em 230px */
+  background: var(--color-loja);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  /* aro metálico fino, como no mockup do Seu Elias */
+  outline: 1.5px solid var(--color-aro);
+  outline-offset: -1px;
+}
+
+.tela {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: calc(var(--fone) * 0.115);
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  width: 42%;
+  height: 4.2%;
+  translate: -50% 0;
+  background: var(--color-loja);
+  border-radius: 0 0 14px 14px;
+}
+
+/* Barra de status (hora e bateria) — tamanhos em cqw para escalar com o aparelho. */
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4cqw 7cqw 0;
+  height: 9cqw;
+  font-size: 4.2cqw;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ---------- Tela 1: conversa ---------- */
+
+.conversa {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4cqw;
+  padding: 5cqw 4.5cqw;
+  background-color: var(--color-bege-2);
+  background-image: radial-gradient(rgba(63, 54, 52, 0.07) 1px, transparent 1.2px);
+  background-size: 6cqw 6cqw;
+}
+
+.balao {
+  position: relative;
+  max-width: 82%;
+  padding: 2.6cqw 3.4cqw 2.2cqw;
+  border-radius: 3.4cqw;
+  font-size: 5.6cqw;
+  line-height: 1.35;
+  color: var(--color-noite);
+  box-shadow: 0 1px 0.5px rgba(20, 14, 10, 0.13);
+}
+
+.balaoCliente {
+  align-self: flex-end;
+  background: var(--color-balao-wa);
+  border-top-right-radius: 0.8cqw;
+}
+
+.balaoLoja {
+  align-self: flex-start;
+  background: var(--color-papel);
+  border-top-left-radius: 0.8cqw;
+}
+
+.hora {
+  display: block;
+  margin-top: 0.8cqw;
+  text-align: right;
+  font-size: 3.6cqw;
+  color: var(--color-muted);
+}
+
+.digitar {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  padding: 2.6cqw 3.4cqw 5cqw;
+  background: var(--color-bege-2);
+}
+
+.campo {
+  flex: 1;
+  padding: 2.6cqw 4cqw;
+  border-radius: 999px;
+  background: var(--color-papel);
+  font-size: 4.6cqw;
+  color: var(--color-muted);
+}
+
+.enviar {
+  display: grid;
+  place-items: center;
+  width: 10cqw;
+  height: 10cqw;
+  border-radius: 50%;
+  background: var(--color-whatsapp-hover);
+  color: var(--color-papel);
+}
+
+/* ---------- Tela 2: horários ---------- */
+
+.agenda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4cqw;
+  padding: 5cqw 4.5cqw 6cqw;
+  background: var(--color-bege-2);
+}
+
+.servico {
+  padding: 3.6cqw 3.8cqw;
+  border-radius: 3cqw;
+  background: var(--color-papel);
+  box-shadow: 0 1px 0 rgba(20, 14, 10, 0.06);
+}
+
+.servicoTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2cqw;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 5.4cqw;
+  line-height: 1.15;
+  color: var(--color-grafite);
+}
+
+.preco {
+  flex-shrink: 0;
+  color: var(--color-mostarda-texto);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6cqw;
+  margin-top: 2cqw;
+}
+
+.chip {
+  padding: 0.8cqw 2.4cqw;
+  border-radius: 999px;
+  font-size: 4.2cqw;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.chipLivre {
+  background: var(--color-bege);
+  color: var(--color-noite);
+  box-shadow: inset 0 0 0 1px rgba(63, 54, 52, 0.18);
+}
+
+.chipOcupado {
+  color: var(--color-muted);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.botaoFalso {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2cqw;
+  padding: 3.4cqw;
+  border-radius: 999px;
+  background: var(--color-whatsapp-hover);
+  color: var(--color-papel);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 4.6cqw;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

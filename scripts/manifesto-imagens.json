@@ -1,0 +1,16 @@
+[
+  { "id": "hero", "arquivo": "hero.jpg", "largura": 1200, "altura": 1500, "proporcao": "4:5", "uso": "Hero, coluna direita (mobile: acima do texto, 72% da largura)" },
+  { "id": "sobre", "arquivo": "sobre.jpg", "largura": 1200, "altura": 900, "proporcao": "4:3", "uso": "Sobre, à direita do texto, com bloco mostarda atrás" },
+  { "id": "galeria-01", "arquivo": "galeria-01.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 1 — Degradê" },
+  { "id": "galeria-02", "arquivo": "galeria-02.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 2 — Barba na navalha" },
+  { "id": "galeria-03", "arquivo": "galeria-03.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 3 — Corte clássico" },
+  { "id": "galeria-04", "arquivo": "galeria-04.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 4 — Ferramentas" },
+  { "id": "galeria-05", "arquivo": "galeria-05.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 5 — Ambiente" },
+  { "id": "galeria-06", "arquivo": "galeria-06.jpg", "largura": 900, "altura": 1200, "proporcao": "3:4", "uso": "Galeria, tile 6 — Acabamento" },
+  { "id": "barbeiro-tomas", "arquivo": "barbeiro-tomas.jpg", "largura": 800, "altura": 1000, "proporcao": "4:5", "uso": "Equipe, card 1 (fundador)" },
+  { "id": "barbeiro-rafael", "arquivo": "barbeiro-rafael.jpg", "largura": 800, "altura": 1000, "proporcao": "4:5", "uso": "Equipe, card 2" },
+  { "id": "barbeiro-diego", "arquivo": "barbeiro-diego.jpg", "largura": 800, "altura": 1000, "proporcao": "4:5", "uso": "Equipe, card 3" },
+  { "id": "barbeiro-caio", "arquivo": "barbeiro-caio.jpg", "largura": 800, "altura": 1000, "proporcao": "4:5", "uso": "Equipe, card 4" },
+  { "id": "mapa", "arquivo": "mapa.jpg", "largura": 1200, "altura": 900, "proporcao": "4:3", "uso": "Contato, coluna direita" },
+  { "id": "og", "arquivo": "og.jpg", "largura": 1200, "altura": 630, "proporcao": "1.91:1", "uso": "Prévia de compartilhamento (Open Graph/Twitter)" }
+]
