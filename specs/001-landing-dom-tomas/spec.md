@@ -34,7 +34,7 @@ As decisões abaixo foram tomadas com bom senso e valem como resposta às dúvid
 - **Nome**: Dom Tomás Barbearia. **Fundação**: 2014. **Slogan**: "Tradição na navalha, estilo no espelho."
 - **Endereço**: Rua do Ofício, 214 — Savassi, Belo Horizonte/MG, CEP 30140-000 (fictício).
 - **Telefone/WhatsApp**: (31) 99555-0142 → número internacional `5531995550142` (fictício, faixa 555-01xx).
-- **Instagram**: @domtomas.barbearia (fictício). **E-mail**: contato@domtomas.com.br (fictício).
+- **Instagram**: nenhum (removido na auditoria: perfil inexistente). **E-mail**: contato@example.com (domínio reservado para exemplos).
 - **Horário**: Terça a sexta 9h–20h · Sábado 8h–18h · Domingo e segunda fechado.
 - **Confiança**: ★ 4,9 de avaliação dos clientes · +10 anos de navalha.
 - **Mensagem padrão do WhatsApp**: "Olá! Quero agendar um horário na Dom Tomás."

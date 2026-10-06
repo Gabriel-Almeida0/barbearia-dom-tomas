@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { IconeInstagram } from '@/components/ui/icons'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { imagens, sizes } from '@/content/imagens'
@@ -12,7 +11,7 @@ import { formatarHorario, site } from '@/content/site'
 import { linkExterno, whatsappUrl } from '@/lib/whatsapp'
 
 const linkTexto =
-  'rounded-sm text-texto-escuro underline decoration-mostarda/60 decoration-1 underline-offset-4 ' +
+  'inline-flex min-h-11 items-center rounded-sm text-texto-escuro underline decoration-mostarda/60 decoration-1 underline-offset-4 ' +
   'transition-colors duration-300 ease-marca hover:text-mostarda hover:decoration-mostarda'
 
 function ItemContato({ icone, rotulo, children }: { icone: ReactNode; rotulo: string; children: ReactNode }) {
@@ -72,13 +71,6 @@ export function Contato() {
                     WhatsApp<span className="sr-only"> (abre em nova aba)</span>
                   </a>
                 </p>
-              </ItemContato>
-
-              <ItemContato icone={<IconeInstagram className={iconeCls} />} rotulo={r.instagram}>
-                <a href={site.instagram.url} {...linkExterno} className={linkTexto}>
-                  {site.instagram.usuario}
-                  <span className="sr-only"> (abre em nova aba)</span>
-                </a>
               </ItemContato>
 
               <ItemContato icone={<Mail className={iconeCls} strokeWidth={2} />} rotulo={r.email}>

@@ -34,11 +34,10 @@ export type Site = {
   }
   telefone: { exibicao: '(31) 99555-0142'; e164: '+5531995550142'; href: `tel:${string}` }
   whatsapp: { numero: '5531995550142'; mensagemPadrao: string }
-  instagram: { usuario: '@domtomas.barbearia'; url: string }
   email: { endereco: string; href: `mailto:${string}` }
   horarios: Horario[]
   avaliacao: { nota: 4.9; texto: string }
-  urlBase: 'https://domtomas.vercel.app'
+  urlBase: string
   navegacao: LinkNavegacao[] // Serviços, A Barbearia, Galeria, Equipe, Contato
   aviso: string // "Projeto fictício de portfólio…"
 }

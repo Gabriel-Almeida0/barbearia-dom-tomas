@@ -3,7 +3,6 @@ import { Container } from '@/components/ui/Container'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { secoes } from '@/content/secoes'
-import { site } from '@/content/site'
 import { whatsappUrl } from '@/lib/whatsapp'
 import PhoneMockups from './PhoneMockups'
 import s from './FaixaWhatsApp.module.css'
@@ -39,12 +38,6 @@ export default function FaixaWhatsApp() {
               icone="whatsapp"
               linha1={t.badgeWhatsApp.linha1}
               linha2={t.badgeWhatsApp.linha2}
-            />
-            <BotaoLoja
-              href={site.instagram.url}
-              icone="instagram"
-              linha1={t.badgeInstagram.linha1}
-              linha2={t.badgeInstagram.linha2}
             />
           </div>
         </div>

@@ -23,11 +23,9 @@ export const site: Site = {
     numero: '5531995550142',
     mensagemPadrao: 'Olá! Quero agendar um horário na Dom Tomás.',
   },
-  instagram: {
-    usuario: '@domtomas.barbearia',
-    url: 'https://instagram.com/domtomas.barbearia',
-  },
-  email: { endereco: 'contato@domtomas.com.br', href: 'mailto:contato@domtomas.com.br' },
+  // E-mail num domínio reservado para exemplos (RFC 2606): ninguém pode registrá-lo e receber
+  // mensagens no lugar da barbearia fictícia. Não há Instagram: o perfil não existe.
+  email: { endereco: 'contato@example.com', href: 'mailto:contato@example.com' },
   horarios: [
     {
       dias: 'Terça a sexta',
@@ -39,7 +37,8 @@ export const site: Site = {
     { dias: 'Domingo e segunda', fechado: true, schemaDias: [] },
   ],
   avaliacao: { nota: 4.9, texto: '4,9 de avaliação dos clientes' },
-  urlBase: 'https://domtomas.vercel.app',
+  // URL pública: NEXT_PUBLIC_SITE_URL no build (VPS), com o domínio no ar como padrão.
+  urlBase: (process.env.NEXT_PUBLIC_SITE_URL || 'https://domtomas.zyphex.site').replace(/\/+$/, ''),
   navegacao: [
     { rotulo: 'Serviços', href: '#servicos' },
     { rotulo: 'A Barbearia', href: '#sobre' },
@@ -47,7 +46,8 @@ export const site: Site = {
     { rotulo: 'Equipe', href: '#equipe' },
     { rotulo: 'Contato', href: '#contato' },
   ],
-  aviso: 'Projeto fictício de portfólio. Telefone, endereço e pessoas são inventados.',
+  aviso:
+    'Projeto fictício de portfólio — negócio, depoimentos e números ilustrativos. Telefone, endereço e pessoas são inventados; fotos geradas por IA.',
 }
 
 /** "09:00" → "9h", "08:30" → "8h30". */

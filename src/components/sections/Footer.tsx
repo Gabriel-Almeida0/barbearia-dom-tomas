@@ -7,7 +7,7 @@ import { linkExterno, whatsappUrl } from '@/lib/whatsapp'
 
 const tituloColuna = 'mb-5 font-head text-[.86rem] font-semibold uppercase tracking-[.1em] text-mostarda'
 const link =
-  'rounded-sm texto-sm text-muted-escuro transition-colors duration-300 ease-marca hover:text-mostarda'
+  'inline-flex min-h-11 items-center rounded-sm texto-sm text-muted-escuro transition-colors duration-300 ease-marca hover:text-mostarda'
 
 /** Rodapé (T048): marca, navegação, canais e CTA; linha final com copyright e aviso. */
 export function Footer() {
@@ -16,7 +16,6 @@ export function Footer() {
 
   const conecte = [
     { rotulo: 'WhatsApp', href: whatsappUrl(), externo: true },
-    { rotulo: 'Instagram', href: site.instagram.url, externo: true },
     { rotulo: site.email.endereco, href: site.email.href, externo: false },
     { rotulo: site.telefone.exibicao, href: site.telefone.href, externo: false },
   ]
@@ -38,7 +37,7 @@ export function Footer() {
           <h2 id="footer-navegue" className={tituloColuna}>
             {t.navegue}
           </h2>
-          <ul className="flex flex-col gap-3">
+          <ul className="-my-2.5 flex flex-col">
             {site.navegacao.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className={link}>
@@ -51,7 +50,7 @@ export function Footer() {
 
         <div>
           <h2 className={tituloColuna}>{t.conecteSe}</h2>
-          <ul className="flex flex-col gap-3">
+          <ul className="-my-2.5 flex flex-col">
             {conecte.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className={link} {...(item.externo ? linkExterno : {})}>

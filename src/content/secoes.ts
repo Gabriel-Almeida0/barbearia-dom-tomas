@@ -38,9 +38,6 @@ export const secoes = {
     destaque: 'trabalho',
   } satisfies CabecalhoSecao,
   galeria: {
-    /** "Siga @domtomas.barbearia no Instagram" — o @ vem de site.instagram.usuario. */
-    rodapeAntes: 'Siga',
-    rodapeDepois: 'no Instagram',
   },
 
   faixaWhatsApp: {
@@ -50,7 +47,6 @@ export const secoes = {
     texto:
       'Escolha o serviço, o barbeiro e o horário numa conversa rápida. A gente confirma na hora e te lembra no dia. Sem app, sem cadastro, sem fila.',
     badgeWhatsApp: { linha1: 'Chamar no', linha2: 'WhatsApp' } satisfies Badge,
-    badgeInstagram: { linha1: 'Siga no', linha2: 'Instagram' } satisfies Badge,
   },
 
   equipeHead: {
@@ -84,7 +80,6 @@ export const secoes = {
       endereco: 'Endereço',
       horario: 'Horário',
       telefone: 'Telefone e WhatsApp',
-      instagram: 'Instagram',
       email: 'E-mail',
     },
     cta: 'Agendar pelo WhatsApp',

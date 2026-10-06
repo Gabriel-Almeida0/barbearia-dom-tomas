@@ -2,12 +2,9 @@ import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
-import { IconeInstagram } from '@/components/ui/icons'
-import { linkExterno } from '@/lib/whatsapp'
 import { galeria } from '@/content/galeria'
 import { secoes } from '@/content/secoes'
 import { imagens, sizes } from '@/content/imagens'
-import { site } from '@/content/site'
 
 /**
  * Galeria (T038): grade 2 → 3 colunas de tiles 3:4 com zoom no hover e legenda sobre gradiente.
@@ -55,21 +52,6 @@ export default function Galeria() {
           })}
         </ul>
 
-        <Reveal className="mt-[clamp(1.8rem,4vw,2.6rem)] text-center">
-          <p className="texto text-muted">
-            <IconeInstagram className="mr-2 inline-block size-[1.15em] -translate-y-px align-middle text-mostarda-texto" />
-            {secoes.galeria.rodapeAntes}{' '}
-            <a
-              href={site.instagram.url}
-              {...linkExterno}
-              className="rounded-sm font-semibold text-mostarda-texto underline decoration-mostarda decoration-2 underline-offset-4 transition-colors duration-300 hover:text-grafite"
-            >
-              {site.instagram.usuario}
-              <span className="sr-only"> (abre em nova aba)</span>
-            </a>{' '}
-            {secoes.galeria.rodapeDepois}
-          </p>
-        </Reveal>
       </Container>
     </section>
   )
