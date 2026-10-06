@@ -83,7 +83,7 @@ function CardServico({ servico }: { servico: Servico }) {
           {...linkExterno}
           aria-label={`${secoes.servicos.agendarEste}: ${servico.nome} pelo WhatsApp`}
           className={
-            'group/link inline-flex shrink-0 items-center gap-1.5 rounded-sm py-1 font-head text-[.86rem] font-semibold ' +
+            'group/link -my-2 inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-sm py-1 font-head text-[.86rem] font-semibold ' +
             'uppercase tracking-[.08em] text-mostarda-texto underline-offset-4 hover:underline'
           }
         >

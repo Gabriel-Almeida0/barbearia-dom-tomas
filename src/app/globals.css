@@ -303,6 +303,15 @@
     transform 0.7s var(--ease-marca);
 }
 
+/* ---------- FAB do WhatsApp ----------
+   Escondido enquanto o hero está na tela (ele já tem os CTAs); com foco por teclado aparece. */
+
+.js .fab-wa:not([data-visivel]):not(:focus-visible) {
+  opacity: 0;
+  translate: 0 12px;
+  pointer-events: none;
+}
+
 /* ---------- Movimento reduzido ---------- */
 
 @media (prefers-reduced-motion: reduce) {

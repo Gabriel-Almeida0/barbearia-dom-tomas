@@ -52,7 +52,7 @@ export const imagens = Object.fromEntries(
 
 /** `sizes` recomendados por uso (research R2). */
 export const sizes = {
-  hero: '(max-width: 979px) 72vw, 480px',
+  hero: '(max-width: 559px) 64vw, (max-width: 979px) 72vw, 480px',
   sobre: '(max-width: 979px) 100vw, 560px',
   galeria: '(max-width: 979px) 50vw, 380px',
   barbeiro: '(max-width: 979px) 50vw, 280px',

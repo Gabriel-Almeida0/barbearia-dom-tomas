@@ -43,7 +43,7 @@ function CardBarbeiro({ barbeiro }: { barbeiro: Barbeiro }) {
         <a
           href={whatsappUrl(mensagemBarbeiro(barbeiro))}
           {...linkExterno}
-          className="rounded-sm decoration-mostarda decoration-2 underline-offset-4 hover:underline focus-visible:underline"
+          className="-my-2.5 inline-flex min-h-11 items-center rounded-sm decoration-mostarda decoration-2 underline-offset-4 hover:underline focus-visible:underline"
         >
           {barbeiro.nome}
           <span className="sr-only">

@@ -23,7 +23,7 @@ export default function Hero() {
     >
       <Decoracao />
 
-      <div className="container-site grid flex-1 items-center gap-12 pb-8 pt-10 text-center sm:pt-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-16 lg:pb-6 lg:pt-12 lg:text-left">
+      <div className="container-site grid flex-1 items-center gap-10 pb-8 pt-6 text-center sm:gap-12 sm:pt-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-16 lg:pb-6 lg:pt-12 lg:text-left">
         {/* Texto */}
         <div className="flex flex-col items-center lg:items-start">
           <p className="eyebrow text-balance text-mostarda">
@@ -70,7 +70,7 @@ export default function Hero() {
         </div>
 
         {/* Foto com bloco mostarda chapado deslocado atrás (Seu Elias) */}
-        <div className="relative order-first mx-auto w-[72%] max-w-[480px] lg:order-none lg:mr-6 lg:w-full">
+        <div className="relative order-first mx-auto w-[64%] max-w-[480px] sm:w-[72%] lg:order-none lg:mr-6 lg:w-full">
           <div
             aria-hidden="true"
             className="absolute inset-0 translate-x-4 translate-y-4 rounded-card bg-mostarda sm:translate-x-6 sm:translate-y-6"
@@ -82,14 +82,14 @@ export default function Hero() {
             alt={foto.alt}
             sizes={sizes.hero}
             preload /* LCP: <link rel="preload"> no <head> (Next 16; substitui `priority`) */
-            className="relative h-auto w-full rounded-card object-cover shadow-marca"
+            className="relative aspect-[5/4] h-auto w-full rounded-card object-cover object-[50%_30%] shadow-marca sm:aspect-auto"
           />
         </div>
       </div>
 
       <a
         href="#servicos"
-        className="nav-link relative mx-auto mb-4 mt-2 flex flex-col items-center gap-0.5 rounded-sm px-2 text-[.72rem] tracking-[.22em] text-muted-escuro transition-colors duration-300 hover:text-mostarda"
+        className="nav-link relative mx-auto mb-3 mt-1 flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-sm px-2 text-[.72rem] tracking-[.22em] text-muted-escuro transition-colors duration-300 hover:text-mostarda"
       >
         <span>
           {hero.rolar}
