@@ -22,7 +22,7 @@ rótulo da user story que ele mais atende (mapa na seção Dependencies).
 
 - **[P]**: pode rodar em paralelo (arquivos diferentes, sem dependência de tarefa incompleta)
 - **[Story]**: US1–US6 da spec
-- Caminhos relativos à raiz `/Users/gabrielalmeidasantosmelo/projetos/barbearia-dom-tomas`
+- Caminhos relativos à raiz do repositório
 
 ## Regras para TODOS os agentes (ler antes de começar)
 

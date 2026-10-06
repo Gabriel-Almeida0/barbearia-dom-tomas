@@ -1,5 +1,6 @@
-import { site } from '@/content/site'
-import type { Barbeiro, Servico } from '@/content/types'
+// Caminhos relativos com .ts: este arquivo também roda nos testes (node --test).
+import { site } from '../content/site.ts'
+import type { Barbeiro, Servico } from '../content/types.ts'
 
 /**
  * Única fonte das URLs do WhatsApp (constituição, princípio I; contracts/whatsapp-links.md).

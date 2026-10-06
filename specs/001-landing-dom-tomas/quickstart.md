@@ -15,7 +15,7 @@ Guia de execução e validação. Detalhes de dados em [data-model.md](./data-mo
 ## Setup
 
 ```bash
-cd /Users/gabrielalmeidasantosmelo/projetos/barbearia-dom-tomas
+cd barbearia-dom-tomas   # raiz do repositório
 npm install
 npm install lucide-react
 npm install -D sharp

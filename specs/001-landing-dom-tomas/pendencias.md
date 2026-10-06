@@ -47,3 +47,13 @@ Uma linha por item, com o prefixo do bloco (ex.: `B3: falta token X em globals.c
 - B8 nomes dos screenshots — **resolvido**: verificação final salva em `docs/verificacao/final-{390|1440}-*.png`.
 - **Aberto — decisão do dono**: o título da faixa WhatsApp ("AGENDE PELO WHATSAPP", branco sobre mostarda) tem 1,92:1, não os ≈3,4:1 que a constituição (III) assume; o Lighthouse aponta (Acessibilidade 96). Mantido branco por ser a assinatura visual pedida (Seu Elias). Alternativa AA: base em `--noite` e "DOM TOMÁS" em branco, ou corrigir a exceção na constituição.
 - **Aberto**: LCP simulado 2,7–2,8 s (meta < 2,5 s) com o placeholder do hero; reavaliar com a imagem final.
+
+## Rodada de correções da auditoria (2026-10-06)
+
+- DOM-01: `site.urlBase` vem de `NEXT_PUBLIC_SITE_URL` (padrão `https://domtomas.zyphex.site`); canonical, og:url e og:image corretos.
+- DOM-04/DOM-12: e-mail trocado por `contato@example.com` (domínio reservado, RFC 2606) e Instagram removido (o perfil não existe) — inclusive o badge "Siga no Instagram" da faixa (muda a decisão D2) e a linha "Siga … no Instagram" da galeria.
+- DOM-05/DOM-06: aviso do rodapé amplo ("negócio, depoimentos e números ilustrativos … fotos geradas por IA"); JSON-LD BarberShop substituído por WebSite.
+- DOM-07: título da faixa mostarda em `noite` com "DOM TOMÁS" branco numa tarja `noite` (mesmo recurso do carimbo da FaixaCta); antes 1,92:1.
+- DOM-09: foto do hero menor e recortada 5:4 abaixo de 560 px; FAB do WhatsApp só aparece depois do hero.
+- DOM-10: links de rodapé, contato, equipe, "Agendar este" e "Role" com alvo de 44 px.
+- DOM-11: `robots.txt`, `sitemap.xml`, testes (`npm test`) e CI.
