@@ -18,7 +18,8 @@ type SectionHeadingProps = {
    * Fundo onde o título está:
    * - claro:    eyebrow mostarda-texto · base grafite · destaque mostarda-texto · sub muted
    * - escuro:   eyebrow mostarda · base texto-escuro · destaque mostarda · sub muted-escuro
-   * - mostarda: eyebrow noite · base branca (papel) · destaque grafite · sub noite
+   * - mostarda: eyebrow noite · base noite · destaque branco numa tarja noite · sub noite
+   *   (o branco direto no mostarda dava 1,92:1; assim tudo passa AA e o contraste branco/escuro fica)
    */
   tom: Tom
   /** default 'centro' (max 640px, centralizado). */
@@ -35,7 +36,12 @@ type SectionHeadingProps = {
 const cores: Record<Tom, { eyebrow: string; base: string; destaque: string; sub: string }> = {
   claro: { eyebrow: 'text-mostarda-texto', base: 'text-grafite', destaque: 'text-mostarda-texto', sub: 'text-muted' },
   escuro: { eyebrow: 'text-mostarda', base: 'text-texto-escuro', destaque: 'text-mostarda', sub: 'text-muted-escuro' },
-  mostarda: { eyebrow: 'text-noite', base: 'text-papel', destaque: 'text-grafite', sub: 'text-noite' },
+  mostarda: {
+    eyebrow: 'text-noite',
+    base: 'text-noite',
+    destaque: 'mt-[.08em] w-fit bg-noite px-[.16em] pt-[.04em] text-papel box-decoration-clone',
+    sub: 'text-noite',
+  },
 }
 
 const tamanhos = {
